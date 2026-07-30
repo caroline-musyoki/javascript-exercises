@@ -80,7 +80,7 @@ function shout(text) {
   return `${text.toUpperCase()}!`;
 }
 //function expression
-const double = function (n) {
+const doubleExpression = function (n) {
   return n * 2;
 };
 //one-line arrow function
@@ -133,14 +133,13 @@ console.log(greet("Anna")); // prediction:
 console.log(shopName); // prediction:
 if (true) {
   const insideIf = "visible in here";
-  console.log(insideIf); // prediction:
+  console.log(insideIf); // prediction: visible in here
 }
 // console.log(insideIf); // prediction first, then uncomment to verify:
-/const shopName = "Maison Sarah";
-
+const bakeryName = "Maison Sarah";
 function greet(customer) {
-  const shopName = "The Corner Bakery";
-  return `Welcome to ${shopName}, ${customer}`;
+  const bakeryName = "The Corner Bakery";
+  return `Welcome to ${bakeryName}, ${customer}`;
 }
 
 console.log(greet("Anna"));
@@ -162,7 +161,6 @@ if (true) {
 // Result: ReferenceError: insideIf is not defined
 // console.log(insideIf);
 
-
 // TODO: Part seven.
 // Write the classic temperature converter as two functions, one converting Celsius to
 // Fahrenheit and one converting back, each returning its result. Log a small table of three
@@ -175,8 +173,12 @@ function fahrenheitToCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }
 
-console.log(`Celsius to Fahrenheit: ${celsiusToFahrenheit(0).toFixed(2)}, ${celsiusToFahrenheit(100).toFixed(2)}, ${celsiusToFahrenheit(37).toFixed(2)}`);
-console.log(`Fahrenheit to Celsius: ${fahrenheitToCelsius(32).toFixed(2)}, ${fahrenheitToCelsius(212).toFixed(2)}, ${fahrenheitToCelsius(98.6).toFixed(2)}`);
+console.log(
+  `Celsius to Fahrenheit: ${celsiusToFahrenheit(0).toFixed(2)}, ${celsiusToFahrenheit(100).toFixed(2)}, ${celsiusToFahrenheit(37).toFixed(2)}`,
+);
+console.log(
+  `Fahrenheit to Celsius: ${fahrenheitToCelsius(32).toFixed(2)}, ${fahrenheitToCelsius(212).toFixed(2)}, ${fahrenheitToCelsius(98.6).toFixed(2)}`,
+);
 
 // TODO: Part eight.
 // The file provides a line that throws a TypeError when run. Wrap it in `try` and `catch`, log
@@ -187,13 +189,13 @@ console.log(`Fahrenheit to Celsius: ${fahrenheitToCelsius(32).toFixed(2)}, ${fah
 // ! then uncomment it and wrap it in try and catch:
 // const answer = 42;
 // console.log(answer.toUpperCase());
-  const answer = 42;
-  try {
-    console.log(answer.toUpperCase());
-  } catch (error) {
-    console.log(`Error occurred: ${error.message}`);
-  }
-  console.log("Program continues...");
+const answer = 42;
+try {
+  console.log(answer.toUpperCase());
+} catch (error) {
+  console.log(`Error occurred: ${error.message}`);
+}
+console.log("Program continues...");
 
 // TODO: Save deliberately, commit with a clear message, push the branch, and open a pull request
 // into main.
