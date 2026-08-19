@@ -1,23 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startupistan Records</title>
     <style>
-      body { font-family: system-ui, sans-serif; max-width: 72rem; margin: 0 auto; padding: 2rem; color: #06302a; }
-      .tagline { color: #555; }
-      .highlight { background-color: #ccebe4; padding: 0.2rem 0.5rem; border-radius: 0.4rem; }
-      .shuffle { background: #00a088; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 0.5rem; cursor: pointer; }
-      .featured { font-weight: 600; min-height: 1.5rem; }
-      .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1rem; margin-top: 1rem; }
-      .cards article { border: 1px solid #d8e4e1; border-radius: 0.7rem; padding: 1rem; }
-      .cards h3 { margin: 0 0 0.4rem; }
-      .cards p { margin: 0; color: #555; }
-      .signup { margin-top: 2rem; display: flex; gap: 0.6rem; align-items: end; }
-      .signup label { display: block; font-size: 0.85rem; margin-bottom: 0.25rem; }
-      .signup input { padding: 0.5rem; border: 1px solid #c9d4de; border-radius: 0.4rem; }
-      .signup button { background: #06302a; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 0.5rem; cursor: pointer; }
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 2rem;
+        color: #06302a;
+      }
+      .tagline {
+        color: #555;
+      }
+      .highlight {
+        background-color: #ccebe4;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.4rem;
+      }
+      .shuffle {
+        background: #00a088;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+      .featured {
+        font-weight: 600;
+        min-height: 1.5rem;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .cards article {
+        border: 1px solid #d8e4e1;
+        border-radius: 0.7rem;
+        padding: 1rem;
+      }
+      .cards h3 {
+        margin: 0 0 0.4rem;
+      }
+      .cards p {
+        margin: 0;
+        color: #555;
+      }
+      .signup {
+        margin-top: 2rem;
+        display: flex;
+        gap: 0.6rem;
+        align-items: end;
+      }
+      .signup label {
+        display: block;
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+      }
+      .signup input {
+        padding: 0.5rem;
+        border: 1px solid #c9d4de;
+        border-radius: 0.4rem;
+      }
+      .signup button {
+        background: #06302a;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
     </style>
     <script src="lesson-09.js" defer></script>
   </head>
@@ -34,5 +90,45 @@
       </div>
       <button type="submit">Add artist</button>
     </form>
+    <script>
+      const heading = document.querySelector("h1");
+      heading.textContent = "Startupistan Records";
+    </script>
+    <script>
+      const artists = [
+        { name: "Pinkfong", genre: "Children's music", total: "11:31" },
+        { name: "Adriano Celentano", genre: "Italian pop", total: "20:52" },
+        { name: "Asake", genre: "Afrobeats", total: "14:08" },
+        { name: "Miyagi and Andy Panda", genre: "Hip-hop", total: "16:21" },
+        { name: "Johnny Cash", genre: "Country", total: "15:40" },
+        { name: "Adele", genre: "Pop", total: "18:25" },
+      ];
+
+      const cards = document.querySelector(".cards");
+
+      artists.forEach((artist) => {
+        const article = document.createElement("article");
+
+        const h3 = document.createElement("h3");
+        h3.textContent = artist.name;
+
+        const p = document.createElement("p");
+        p.textContent = `${artist.genre} — Total runtime: ${artist.total}`;
+
+        article.appendChild(h3);
+        article.appendChild(p);
+
+        cards.appendChild(article);
+      });
+    </script>
+    <button class="shuffle">Shuffle Artist</button>
+
+    <p class="featured">Click the button to feature an artist!</p>
+    <form class="signup">
+      <input id="artist-name" type="text" placeholder="Artist name" />
+      <button type="submit">Add Artist</button>
+    </form>
+
+    <section class="cards"></section>
   </body>
 </html>

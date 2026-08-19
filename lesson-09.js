@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Lesson 09 exercise: The DOM and forms
 // In your exercise repository, create a branch named `lesson-09-exercise` and switch to it.
@@ -10,13 +10,12 @@
 // Log one sentence to the console, then log `document.title`, and confirm that both appear in
 // the DevTools Console rather than in a terminal. In a comment, state what the `defer`
 // attribute prevented.
-
-
+// The `defer` attribute prevented the script from running before the HTML document was fully parsed.
 // TODO: Part two.
 // Select the page's `h1` with `querySelector` and replace its `textContent` with a label name
 // of your choosing. Select the tagline by its class and change its text, then add the provided
 // highlight class to it through `classList`.
-
+// Select the h1 and replace its text.
 
 // TODO: Part three.
 // The file provides the artists as an array of objects. Loop over it, create an `article`
@@ -33,18 +32,17 @@ const artists = [
   { name: "Johnny Cash", genre: "Country", total: "15:40" },
 ];
 
-
 // TODO: Part four.
 // Add a sixth artist object of your own invention to the array and reload. Confirm that the
 // sixth card exists, and state in a comment what you did not have to change, compared with the
 // five hand-copied cards this course opened on.
-
+// I did not have to change the loop, the article creation code, or the HTML.
+// The existing code automatically created the sixth card from the new object.
 
 // TODO: Part five.
 // The page provides a button with the shuffle class and an element with the featured class. On
 // click, pick a random artist using the random recipe with `Math.floor`, and write a featured
 // sentence into the featured element with a template literal.
-
 
 // TODO: Part six.
 // The page provides a form with the signup class and a text input with the artist-name id. On
@@ -54,7 +52,7 @@ const artists = [
 // call. An empty submission does nothing; name in a comment which falsy value makes that check
 // work. As a stretch, clear the input by assigning it an empty string after each successful
 // addition.
-
+// The falsy value that makes the check fail for an empty submission is an empty string ("").
 
 // TODO: Save deliberately, commit with a clear message, push the branch, and open a pull request
 // into main. This is the final exercise of the course, and the reviewed merge closes it.
